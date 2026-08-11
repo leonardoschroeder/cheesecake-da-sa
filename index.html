@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cheesecake da Sá | O Autêntico Cheesecake Artesanal</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #C82333;
+            --primary-hover: #A71D2A;
+            --primary-light: #FADBD8;
+            --secondary: #2C3E50;
+            --accent: #E67E22;
+            --bg-cream: #FFFDF9;
+            --bg-card: #FFFFFF;
+            --text-main: #2D3748;
+            --text-muted: #718096;
+            --border-color: #EDF2F7;
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+            --shadow-md: 0 10px 25px -5px rgba(200, 35, 51, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+            --shadow-lg: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+            --radius-lg: 18px;
+            --radius-md: 12px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-cream);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header / Navbar */
+        header {
+            position: sticky;
+            top: 0;
+            background-color: rgba(255, 253, 249, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(200, 35, 51, 0.1);
+            padding: 16px 0;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--primary);
+        }
+
+        .logo-icon {
+            width: 44px;
+            height: 44px;
+            background-color: var(--primary-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            color: var(--primary);
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 600;
+            font-size: 15px;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 15px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+            box-shadow: 0 4px 14px rgba(200, 35, 51, 0.35);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(200, 35, 51, 0.45);
+        }
+
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: white;
+            box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #1DA851;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-light);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 60px 0 80px;
+            position: relative;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: #FFF3CD;
+            color: #856404;
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .hero-title {
+            font-size: 52px;
+            line-height: 1.15;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+
+        .hero-title span {
+            color: var(--primary);
+            font-style: italic;
+        }
+
+        .hero-subtitle {
+            font-size: 18px;
+            color: var(--text-muted);
+            margin-bottom: 32px;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+        }
+
+        .hero-img {
+            width: 100%;
+            height: 480px;
+            object-fit: cover;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .floating-card {
+            position: absolute;
+            bottom: -20px;
+            left: -20px;
+            background: white;
+            padding: 20px;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-md);
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            max-width: 280px;
+        }
+
+        .floating-card-icon {
+            font-size: 30px;
+            color: var(--primary);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 60px 0;
+            background-color: white;
+            border-y: 1px solid var(--border-color);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 30px 20px;
+            border-radius: var(--radius-md);
+            background: var(--bg-cream);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-light);
+            color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin: 0 auto 20px;
+        }
+
+        .feature-title {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: var(--secondary);
+        }
+
+        .feature-desc {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        /* Menu / Products Section */
+        .menu-section {
+            padding: 90px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 50px;
+        }
+
+        .section-subtitle {
+            color: var(--primary);
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 13px;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        .section-title {
+            font-size: 38px;
+            color: var(--secondary);
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+        }
+
+        .menu-card {
+            background: white;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .menu-card:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateY(-5px);
+        }
+
+        .menu-card-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .menu-card-body {
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .menu-card-tag {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--primary);
+            background-color: var(--primary-light);
+            padding: 4px 10px;
+            border-radius: 20px;
+            align-self: flex-start;
+            margin-bottom: 12px;
+        }
+
+        .menu-card-title {
+            font-size: 22px;
+            margin-bottom: 8px;
+            color: var(--secondary);
+        }
+
+        .menu-card-desc {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .menu-card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 16px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .price-tag {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--secondary);
+        }
+
+        .price-tag span {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-muted);
+        }
+
+        /* Order Form Section */
+        .order-section {
+            padding: 90px 0;
+            background: linear-gradient(135deg, #FFFDF9 0%, #FADBD8 100%);
+        }
+
+        .order-container {
+            background: white;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            padding: 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--secondary);
+        }
+
+        .form-input, .form-select, .form-textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            font-family: inherit;
+            font-size: 15px;
+            background-color: #FAFAFA;
+            transition: border 0.2s;
+        }
+
+        .form-input:focus, .form-select:focus, .form-textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            background-color: white;
+        }
+
+        .qty-selector {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #F7FAFC;
+            padding: 12px;
+            border-radius: var(--radius-md);
+            margin-bottom: 12px;
+        }
+
+        .qty-controls {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .btn-qty {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            border: 1px solid #CBD5E0;
+            background: white;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-qty:hover {
+            background: var(--primary-light);
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .order-summary {
+            background-color: #FAFAFA;
+            padding: 24px;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-color);
+        }
+
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            font-size: 15px;
+        }
+
+        .summary-total {
+            display: flex;
+            justify-content: space-between;
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--secondary);
+            border-top: 2px dashed #E2E8F0;
+            padding-top: 16px;
+            margin-top: 16px;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 90px 0;
+            background-color: white;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: var(--bg-cream);
+            padding: 30px;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-color);
+            position: relative;
+        }
+
+        .google-badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 16px;
+            color: #4285F4;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .stars {
+            color: #FFC107;
+            margin-bottom: 16px;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            color: var(--text-main);
+            margin-bottom: 20px;
+            font-size: 15px;
+        }
+
+        .author-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .author-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background-color: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+        }
+
+        .author-name {
+            font-weight: 700;
+            font-size: 15px;
+            color: var(--secondary);
+        }
+
+        .author-meta {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        /* Delivery Info Section */
+        .info-section {
+            padding: 60px 0;
+            background: var(--secondary);
+            color: white;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+        }
+
+        .info-box h4 {
+            font-size: 22px;
+            margin-bottom: 12px;
+            color: #FADBD8;
+        }
+
+        .info-box p {
+            color: #E2E8F0;
+            font-size: 15px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1A202C;
+            color: #A0AEC0;
+            padding: 40px 0 20px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        footer p {
+            margin-top: 16px;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .hero-grid, .order-container {
+                grid-template-columns: 1fr;
+            }
+            .hero-title {
+                font-size: 38px;
+            }
+            .hero-img {
+                height: 350px;
+            }
+            .nav-links {
+                display: none; /* Can be toggled */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <div class="logo-icon"><i class="fa-solid fa-cheese"></i></div>
+                <div class="logo-text">Cheesecake da Sá</div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#cardapio">Cardápio</a></li>
+                <li><a href="#avaliacoes">Avaliações</a></li>
+                <li><a href="#fazer-pedido">Fazer Pedido</a></li>
+            </ul>
+            <a href="https://wa.me/554797818369?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20os%20cheesecakes!" target="_blank" class="btn btn-whatsapp">
+                <i class="fa-brands fa-whatsapp"></i> +55 47 9781-8369
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-grid">
+            <div>
+                <div class="badge">
+                    <i class="fa-solid fa-star"></i> Avaliação 5.0 no Google
+                </div>
+                <h1 class="hero-title">O verdadeiro <span>Cheesecake artesanal</span> com geleia de morango</h1>
+                <p class="hero-subtitle">
+                    Base crocante amanteigada, recheio cremoso inigualável e uma cobertura geroda de geleia artesanal feita com morangos selecionados.
+                </p>
+                <div class="hero-actions">
+                    <a href="#fazer-pedido" class="btn btn-primary"><i class="fa-solid fa-cart-shopping"></i> Monte seu Pedido</a>
+                    <a href="#cardapio" class="btn btn-outline"><i class="fa-solid fa-utensils"></i> Ver Preços</a>
+                </div>
+            </div>
+            <div class="hero-image-wrapper">
+                <img src="https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=800&q=80" alt="Cheesecake de Morango da Sá" class="hero-img">
+                <div class="floating-card">
+                    <div class="floating-card-icon"><i class="fa-solid fa-heart"></i></div>
+                    <div>
+                        <strong style="display:block; font-size:14px; color: var(--secondary);">100% Artesanal</strong>
+                        <span style="font-size:12px; color: var(--text-muted);">Geleia natural sem conservantes</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Differentials -->
+    <section class="features" id="sobre">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-stroopwafel"></i></div>
+                    <h3 class="feature-title">Massa Crocante</h3>
+                    <p class="feature-desc">Massa de biscoito amanteigada assada no ponto exato para a crocância perfeita.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-cheese"></i></div>
+                    <h3 class="feature-title">Creme Aveludado</h3>
+                    <p class="feature-desc">Cream cheese de altíssima qualidade com textura ultra macia e equilíbrio de doçura.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-seedling"></i></div>
+                    <h3 class="feature-title">Geleia Caseira</h3>
+                    <p class="feature-desc">Morangos frescos reduzidos artesanalmente com o toque cítrico ideal.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="menu-section" id="cardapio">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Tamanhos e Opções</span>
+                <h2 class="section-title">Nosso Cardápio</h2>
+            </div>
+            <div class="menu-grid">
+                <!-- Fatia -->
+                <div class="menu-card">
+                    <img src="https://images.unsplash.com/photo-1567171466295-4afa63d45416?auto=format&fit=crop&w=600&q=80" alt="Fatia de Cheesecake" class="menu-card-img">
+                    <div class="menu-card-body">
+                        <span class="menu-card-tag">Individual</span>
+                        <h3 class="menu-card-title">Fatia de Cheesecake</h3>
+                        <p class="menu-card-desc">Uma fatia generosa coberta com geleia de morango. A medida certa para matar a sua vontade!</p>
+                        <div class="menu-card-footer">
+                            <div class="price-tag">R$ 14<span>,00</span></div>
+                            <a href="#fazer-pedido" onclick="selectItem('fatia')" class="btn btn-primary" style="padding: 8px 16px; font-size: 13px;">Pedir agora</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pequena -->
+                <div class="menu-card">
+                    <img src="https://images.unsplash.com/photo-1524351199678-941a58a3df50?auto=format&fit=crop&w=600&q=80" alt="Cheesecake Pequena" class="menu-card-img">
+                    <div class="menu-card-body">
+                        <span class="menu-card-tag">Para 2 Pessoas</span>
+                        <h3 class="menu-card-title">Cheesecake Pequena</h3>
+                        <p class="menu-card-desc">Torta individual/dupla perfeita para compartilhar um momento doce especial.</p>
+                        <div class="menu-card-footer">
+                            <div class="price-tag">R$ 25<span>,00</span></div>
+                            <a href="#fazer-pedido" onclick="selectItem('pequena')" class="btn btn-primary" style="padding: 8px 16px; font-size: 13px;">Pedir agora</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Média -->
+                <div class="menu-card">
+                    <img src="https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=600&q=80" alt="Cheesecake Média" class="menu-card-img">
+                    <div class="menu-card-body">
+                        <span class="menu-card-tag">Mais Vendida</span>
+                        <h3 class="menu-card-title">Cheesecake Média</h3>
+                        <p class="menu-card-desc">Ideal para pequenas reuniões de família ou amigos (serve de 4 a 6 pessoas).</p>
+                        <div class="menu-card-footer">
+                            <div class="price-tag">R$ 60<span>,00</span></div>
+                            <a href="#fazer-pedido" onclick="selectItem('media')" class="btn btn-primary" style="padding: 8px 16px; font-size: 13px;">Pedir agora</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Inteira -->
+                <div class="menu-card">
+                    <img src="https://images.unsplash.com/photo-1508737027454-e6454ef45afd?auto=format&fit=crop&w=600&q=80" alt="Cheesecake Inteira" class="menu-card-img">
+                    <div class="menu-card-body">
+                        <span class="menu-card-tag">Festa / Família</span>
+                        <h3 class="menu-card-title">Cheesecake Inteira Grande</h3>
+                        <p class="menu-card-desc">Torta inteira artesanal para grandes comemorações e momentos inesquecíveis (serve até 12 pessoas).</p>
+                        <div class="menu-card-footer">
+                            <div class="price-tag">R$ 130<span>,00</span></div>
+                            <a href="#fazer-pedido" onclick="selectItem('inteira')" class="btn btn-primary" style="padding: 8px 16px; font-size: 13px;">Pedir agora</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Builder Section -->
+    <section class="order-section" id="fazer-pedido">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Prático e Rápido</span>
+                <h2 class="section-title">Monte o Seu Pedido</h2>
+            </div>
+            <div class="order-container">
+                <div>
+                    <h3 style="margin-bottom: 20px; font-size: 22px; color: var(--secondary);">1. Escolha a Quantidade</h3>
+
+                    <div class="qty-selector">
+                        <div>
+                            <strong>Fatia</strong> <br>
+                            <small class="text-muted">R$ 14,00 cada</small>
+                        </div>
+                        <div class="qty-controls">
+                            <button class="btn-qty" onclick="updateQty('fatia', -1)">-</button>
+                            <span id="qty-fatia" style="font-weight:700; width: 20px; text-align: center;">0</span>
+                            <button class="btn-qty" onclick="updateQty('fatia', 1)">+</button>
+                        </div>
+                    </div>
+
+                    <div class="qty-selector">
+                        <div>
+                            <strong>Pequena</strong> <br>
+                            <small class="text-muted">R$ 25,00 cada</small>
+                        </div>
+                        <div class="qty-controls">
+                            <button class="btn-qty" onclick="updateQty('pequena', -1)">-</button>
+                            <span id="qty-pequena" style="font-weight:700; width: 20px; text-align: center;">0</span>
+                            <button class="btn-qty" onclick="updateQty('pequena', 1)">+</button>
+                        </div>
+                    </div>
+
+                    <div class="qty-selector">
+                        <div>
+                            <strong>Média</strong> <br>
+                            <small class="text-muted">R$ 60,00 cada</small>
+                        </div>
+                        <div class="qty-controls">
+                            <button class="btn-qty" onclick="updateQty('media', -1)">-</button>
+                            <span id="qty-media" style="font-weight:700; width: 20px; text-align: center;">0</span>
+                            <button class="btn-qty" onclick="updateQty('media', 1)">+</button>
+                        </div>
+                    </div>
+
+                    <div class="qty-selector">
+                        <div>
+                            <strong>Inteira Grande</strong> <br>
+                            <small class="text-muted">R$ 130,00 cada</small>
+                        </div>
+                        <div class="qty-controls">
+                            <button class="btn-qty" onclick="updateQty('inteira', -1)">-</button>
+                            <span id="qty-inteira" style="font-weight:700; width: 20px; text-align: center;">0</span>
+                            <button class="btn-qty" onclick="updateQty('inteira', 1)">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 style="margin-bottom: 20px; font-size: 22px; color: var(--secondary);">2. Dados de Entrega e Envio</h3>
+
+                    <div class="form-group">
+                        <label class="form-label">Seu Nome</label>
+                        <input type="text" id="customer-name" class="form-input" placeholder="Ex: Maria Silva" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Forma de Retirada / Entrega</label>
+                        <select id="delivery-option" class="form-select" onchange="toggleAddressField()">
+                            <option value="Retirada Grátis">Retirada no Local (Grátis)</option>
+                            <option value="Entrega a Combinar">Entrega no Endereço (Taxa a combinar)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group" id="address-container" style="display: none;">
+                        <label class="form-label">Endereço de Entrega (Bairro / Rua / Nº)</label>
+                        <input type="text" id="customer-address" class="form-input" placeholder="Rua, número e bairro">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Observações / Data desejada</label>
+                        <textarea id="order-notes" class="form-textarea" rows="2" placeholder="Ex: Entregar até 16h, cartão de parabéns, etc."></textarea>
+                    </div>
+
+                    <div class="order-summary">
+                        <div id="summary-list">
+                            <p style="color: var(--text-muted); font-size: 14px;">Nenhum item selecionado.</p>
+                        </div>
+                        <div class="summary-total">
+                            <span>Total Estimado:</span>
+                            <span id="total-price" style="color: var(--primary);">R$ 0,00</span>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; gap: 12px; margin-top: 20px; flex-wrap: wrap;">
+                        <button onclick="sendWhatsAppOrder()" class="btn btn-whatsapp" style="flex: 1; justify-content: center;">
+                            <i class="fa-brands fa-whatsapp"></i> Enviar p/ WhatsApp
+                        </button>
+                        <button onclick="sendEmailOrder()" class="btn btn-outline" style="flex: 1; justify-content: center;">
+                            <i class="fa-solid fa-envelope"></i> Enviar por E-mail
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials / Google Reviews -->
+    <section class="testimonials" id="avaliacoes">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Opinião dos Clientes</span>
+                <h2 class="section-title">Avaliações no Google</h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="google-badge"><i class="fa-brands fa-google"></i> Avaliação do Google</div>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p class="testimonial-text">"Simplesmente o melhor cheesecake que já comi! A massa é super crocante e a geleia de morango tem um azedinho delicioso e equilibrado. Atendimento impecável!"</p>
+                    <div class="author-info">
+                        <div class="author-avatar">C</div>
+                        <div>
+                            <div class="author-name">Camila Rocha</div>
+                            <div class="author-meta">Cliente Local</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="google-badge"><i class="fa-brands fa-google"></i> Avaliação do Google</div>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p class="testimonial-text">"Pedi para um aniversário de família e foi um sucesso total. Todos amaram a cremosidade do recheio. Vale cada centavo!"</p>
+                    <div class="author-info">
+                        <div class="author-avatar">R</div>
+                        <div>
+                            <div class="author-name">Rodrigo Freitas</div>
+                            <div class="author-meta">Cliente Verificado</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="google-badge"><i class="fa-brands fa-google"></i> Avaliação do Google</div>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p class="testimonial-text">"Geleia artesanal de verdade, nota-se o capricho em cada detalhe. A fatia tem o tamanho ideal para o lanche da tarde. Super recomendo!"</p>
+                    <div class="author-info">
+                        <div class="author-avatar">J</div>
+                        <div>
+                            <div class="author-name">Juliana Mendes</div>
+                            <div class="author-meta">Cliente Frequente</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Info Section -->
+    <section class="info-section">
+        <div class="container">
+            <div class="info-grid">
+                <div class="info-box">
+                    <h4><i class="fa-solid fa-store"></i> Retirada Grátis</h4>
+                    <p>Combine o horário e retire seu pedido diretamente conosco sem custo adicional de frete.</p>
+                </div>
+                <div class="info-box">
+                    <h4><i class="fa-solid fa-truck-ramp-box"></i> Entrega Combinada</h4>
+                    <p>Entregamos na sua região via serviço de entrega rápido. A taxa de entrega é calculada e combinada no momento do pedido.</p>
+                </div>
+                <div class="info-box">
+                    <h4><i class="fa-brands fa-whatsapp"></i> Contato Direto</h4>
+                    <p>Fale diretamente com a Sá pelo WhatsApp: <strong>+55 47 9781-8369</strong> para tiradas de dúvidas e encomendas personalizadas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="logo" style="justify-content: center; color: white; margin-bottom: 12px;">
+                <div class="logo-icon" style="background-color: var(--primary); color: white;"><i class="fa-solid fa-cheese"></i></div>
+                <div class="logo-text" style="color: white;">Cheesecake da Sá</div>
+            </div>
+            <p>Os melhores cheesecakes artesanais de Joinville e região com geleia caseira de morango.</p>
+            <p style="font-size: 12px; color: #718096; margin-top: 24px;">© 2026 Cheesecake da Sá. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Logic -->
+    <script>
+        const prices = {
+            fatia: 14,
+            pequena: 25,
+            media: 60,
+            inteira: 130
+        };
+
+        const names = {
+            fatia: "Fatia de Cheesecake",
+            pequena: "Cheesecake Pequena",
+            media: "Cheesecake Média",
+            inteira: "Cheesecake Inteira Grande"
+        };
+
+        let cart = {
+            fatia: 0,
+            pequena: 0,
+            media: 0,
+            inteira: 0
+        };
+
+        function updateQty(item, change) {
+            if (cart[item] + change >= 0) {
+                cart[item] += change;
+                document.getElementById(`qty-${item}`).innerText = cart[item];
+                renderSummary();
+            }
+        }
+
+        function selectItem(item) {
+            cart[item] += 1;
+            document.getElementById(`qty-${item}`).innerText = cart[item];
+            renderSummary();
+        }
+
+        function toggleAddressField() {
+            const option = document.getElementById('delivery-option').value;
+            const container = document.getElementById('address-container');
+            if (option.includes('Entrega')) {
+                container.style.display = 'block';
+            } else {
+                container.style.display = 'none';
+            }
+        }
+
+        function calculateTotal() {
+            let total = 0;
+            for (let item in cart) {
+                total += cart[item] * prices[item];
+            }
+            return total;
+        }
+
+        function renderSummary() {
+            const listEl = document.getElementById('summary-list');
+            const totalEl = document.getElementById('total-price');
+            listEl.innerHTML = '';
+            
+            let hasItems = false;
+            let total = calculateTotal();
+
+            for (let item in cart) {
+                if (cart[item] > 0) {
+                    hasItems = true;
+                    const itemTotal = cart[item] * prices[item];
+                    const div = document.createElement('div');
+                    div.className = 'summary-item';
+                    div.innerHTML = `<span>${cart[item]}x ${names[item]}</span> <strong>R$ ${itemTotal.toFixed(2).replace('.', ',')}</strong>`;
+                    listEl.appendChild(div);
+                }
+            }
+
+            if (!hasItems) {
+                listEl.innerHTML = '<p style="color: var(--text-muted); font-size: 14px;">Nenhum item selecionado.</p>';
+            }
+
+            totalEl.innerText = `R$ ${total.toFixed(2).replace('.', ',')}`;
+        }
+
+        function buildOrderText() {
+            const name = document.getElementById('customer-name').value.trim() || 'Não informado';
+            const delivery = document.getElementById('delivery-option').value;
+            const address = document.getElementById('customer-address').value.trim();
+            const notes = document.getElementById('order-notes').value.trim();
+
+            let itemsText = '';
+            let total = calculateTotal();
+
+            for (let item in cart) {
+                if (cart[item] > 0) {
+                    itemsText += `• ${cart[item]}x ${names[item]} (R$ ${(cart[item] * prices[item]).toFixed(2).replace('.', ',')})
+`;
+                }
+            }
+
+            if (itemsText === '') {
+                alert('Por favor, selecione pelo menos um item para o seu pedido.');
+                return null;
+            }
+
+            let msg = `🍰 *NOVO PEDIDO - CHEESECAKE DA SÁ*
+
+`;
+            msg += `👤 *Nome:* ${name}
+`;
+            msg += `📍 *Modalidade:* ${delivery}
+`;
+            if (delivery.includes('Entrega') && address) {
+                msg += `🏠 *Endereço:* ${address}
+`;
+            }
+            if (notes) {
+                msg += `📝 *Observações:* ${notes}
+`;
+            }
+            msg += `
+🛒 *ITENS DO PEDIDO:*
+${itemsText}
+`;
+            msg += `💰 *TOTAL:* R$ ${total.toFixed(2).replace('.', ',')}
+
+`;
+            msg += `(Entrega a combinar ou retirada grátis)`;
+
+            return msg;
+        }
+
+        function sendWhatsAppOrder() {
+            const msg = buildOrderText();
+            if (!msg) return;
+
+            const encoded = encodeURIComponent(msg);
+            const whatsappUrl = `https://wa.me/554797818369?text=${encoded}`;
+            window.open(whatsappUrl, '_blank');
+        }
+
+        function sendEmailOrder() {
+            const msg = buildOrderText();
+            if (!msg) return;
+
+            const name = document.getElementById('customer-name').value.trim() || 'Cliente';
+            const mailtoUrl = `mailto:contato@cheesecakedasa.com.br?subject=${encodeURIComponent('Novo Pedido - ' + name)}&body=${encodeURIComponent(msg)}`;
+            window.location.href = mailtoUrl;
+        }
+    </script>
+</body>
+</html>
