@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cheesecake da Sá | O Autêntico Cheesecake Artesanal</title>
+	<link rel="icon" type="image/png" sizes="32x32" href="imagens/logo3.PNG" />
+    <link rel="apple-touch-icon" href="imagens/logo3.PNG" />
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -78,18 +80,22 @@
             text-decoration: none;
             color: var(--primary);
         }
+		.logo-icon {
+			width: 64px;          /* Aumentado de 48px para 64px */
+			height: 64px;         /* Mantém a proporção 1:1 */
+			border-radius: 50%;   /* Recorte circular */
+			overflow: hidden;     /* Oculta as bordas beges quadradas da imagem */
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-shrink: 0;       /* Impede que o flexbox encolha a imagem em telas menores */
+		}
 
-        .logo-icon {
-            width: 44px;
-            height: 44px;
-            background-color: var(--primary-light);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 22px;
-            color: var(--primary);
-        }
+		.logo-icon img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;    /* Preenche o círculo mantendo a proporção */
+		}
 
         .logo-text {
             font-size: 24px;
@@ -625,6 +631,15 @@
                 display: none; /* Can be toggled */
             }
         }
+		
+@media (max-width: 768px) {
+    .span-sm-0 {
+        display: none; /* Esconde o texto */
+    }
+	.sm-display-center {
+		text-align:center;
+	}
+}
     </style>
 </head>
 <body>
@@ -633,8 +648,9 @@
     <header>
         <div class="container nav-container">
             <a href="#" class="logo">
-                <div class="logo-icon"><i class="fa-solid fa-cheese"></i></div>
-                <div class="logo-text">Cheesecake da Sá</div>
+                <!--<div class="logo-icon"><i class="fa-solid fa-cheese"></i></div>-->
+				<div class="logo-icon"><img src="imagens/logo3.PNG" /></i></div>
+                <div class="logo-text sm-display-center">Cheesecake da Sá</div>
             </a>
             <ul class="nav-links">
                 <li><a href="#sobre">Sobre</a></li>
@@ -643,7 +659,7 @@
                 <li><a href="#fazer-pedido">Fazer Pedido</a></li>
             </ul>
             <a href="https://wa.me/554797818369?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20os%20cheesecakes!" target="_blank" class="btn btn-whatsapp">
-                <i class="fa-brands fa-whatsapp"></i> +55 47 9781-8369
+                <i class="fa-brands fa-whatsapp"></i> <span class="span-sm-0">Entre em Contato</span>
             </a>
         </div>
     </header>
@@ -657,7 +673,7 @@
                 </div>
                 <h1 class="hero-title">O verdadeiro <span>Cheesecake artesanal</span> com geleia de morango</h1>
                 <p class="hero-subtitle">
-                    Base crocante amanteigada, recheio cremoso inigualável e uma cobertura geroda de geleia artesanal feita com morangos selecionados.
+                    Base crocante amanteigada, recheio cremoso inigualável e uma cobertura generosa de geleia artesanal feita com morangos selecionados.
                 </p>
                 <div class="hero-actions">
                     <a href="#fazer-pedido" class="btn btn-primary"><i class="fa-solid fa-cart-shopping"></i> Monte seu Pedido</a>
@@ -665,12 +681,12 @@
                 </div>
             </div>
             <div class="hero-image-wrapper">
-                <img src="https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=800&q=80" alt="Cheesecake de Morango da Sá" class="hero-img">
+                <img src="imagens/foto_capa_quadrada.jpeg" alt="Cheesecake de Morango da Sá" class="hero-img">
                 <div class="floating-card">
                     <div class="floating-card-icon"><i class="fa-solid fa-heart"></i></div>
                     <div>
                         <strong style="display:block; font-size:14px; color: var(--secondary);">100% Artesanal</strong>
-                        <span style="font-size:12px; color: var(--text-muted);">Geleia natural sem conservantes</span>
+                        <span style="font-size:12px; color: var(--text-muted);">Geleia natural, caseira</span>
                     </div>
                 </div>
             </div>
@@ -710,7 +726,7 @@
             <div class="menu-grid">
                 <!-- Fatia -->
                 <div class="menu-card">
-                    <img src="https://images.unsplash.com/photo-1567171466295-4afa63d45416?auto=format&fit=crop&w=600&q=80" alt="Fatia de Cheesecake" class="menu-card-img">
+                    <img src="imagens/fatia.jpeg" alt="Fatia de Cheesecake" class="menu-card-img">
                     <div class="menu-card-body">
                         <span class="menu-card-tag">Individual</span>
                         <h3 class="menu-card-title">Fatia de Cheesecake</h3>
@@ -724,7 +740,7 @@
 
                 <!-- Pequena -->
                 <div class="menu-card">
-                    <img src="https://images.unsplash.com/photo-1524351199678-941a58a3df50?auto=format&fit=crop&w=600&q=80" alt="Cheesecake Pequena" class="menu-card-img">
+                    <img src="imagens/fatia.jpeg" alt="Cheesecake Pequena" class="menu-card-img">
                     <div class="menu-card-body">
                         <span class="menu-card-tag">Para 2 Pessoas</span>
                         <h3 class="menu-card-title">Cheesecake Pequena</h3>
@@ -738,7 +754,7 @@
 
                 <!-- Média -->
                 <div class="menu-card">
-                    <img src="https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=600&q=80" alt="Cheesecake Média" class="menu-card-img">
+                    <img src="imagens/media.jpg" alt="Cheesecake Média" class="menu-card-img">
                     <div class="menu-card-body">
                         <span class="menu-card-tag">Mais Vendida</span>
                         <h3 class="menu-card-title">Cheesecake Média</h3>
@@ -752,7 +768,7 @@
 
                 <!-- Inteira -->
                 <div class="menu-card">
-                    <img src="https://images.unsplash.com/photo-1508737027454-e6454ef45afd?auto=format&fit=crop&w=600&q=80" alt="Cheesecake Inteira" class="menu-card-img">
+                    <img src="imagens/grande.jpeg" alt="Cheesecake Inteira" class="menu-card-img">
                     <div class="menu-card-body">
                         <span class="menu-card-tag">Festa / Família</span>
                         <h3 class="menu-card-title">Cheesecake Inteira Grande</h3>
@@ -865,10 +881,7 @@
 
                     <div style="display: flex; gap: 12px; margin-top: 20px; flex-wrap: wrap;">
                         <button onclick="sendWhatsAppOrder()" class="btn btn-whatsapp" style="flex: 1; justify-content: center;">
-                            <i class="fa-brands fa-whatsapp"></i> Enviar p/ WhatsApp
-                        </button>
-                        <button onclick="sendEmailOrder()" class="btn btn-outline" style="flex: 1; justify-content: center;">
-                            <i class="fa-solid fa-envelope"></i> Enviar por E-mail
+                            <i class="fa-brands fa-whatsapp"></i> Enviar no WhatsApp
                         </button>
                     </div>
                 </div>
@@ -887,11 +900,11 @@
                 <div class="testimonial-card">
                     <div class="google-badge"><i class="fa-brands fa-google"></i> Avaliação do Google</div>
                     <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p class="testimonial-text">"Simplesmente o melhor cheesecake que já comi! A massa é super crocante e a geleia de morango tem um azedinho delicioso e equilibrado. Atendimento impecável!"</p>
+                    <p class="testimonial-text">"Muito boa a cheesecake, melhor que todas as panificadoras que já comi"</p>
                     <div class="author-info">
-                        <div class="author-avatar">C</div>
+                        <div class="author-avatar">L</div>
                         <div>
-                            <div class="author-name">Camila Rocha</div>
+                            <div class="author-name">Leonardo Schroeder</div>
                             <div class="author-meta">Cliente Local</div>
                         </div>
                     </div>
@@ -900,11 +913,11 @@
                 <div class="testimonial-card">
                     <div class="google-badge"><i class="fa-brands fa-google"></i> Avaliação do Google</div>
                     <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p class="testimonial-text">"Pedi para um aniversário de família e foi um sucesso total. Todos amaram a cremosidade do recheio. Vale cada centavo!"</p>
+                    <p class="testimonial-text">"Sensacional, muito gostosa, não tem gosto nem textura de gelatina, a cobertura é fresca e muito boa. Já comi até em cafés pela cidade. Recomendo muito."</p>
                     <div class="author-info">
-                        <div class="author-avatar">R</div>
+                        <div class="author-avatar">M</div>
                         <div>
-                            <div class="author-name">Rodrigo Freitas</div>
+                            <div class="author-name">Murilo Pereira</div>
                             <div class="author-meta">Cliente Verificado</div>
                         </div>
                     </div>
@@ -913,11 +926,11 @@
                 <div class="testimonial-card">
                     <div class="google-badge"><i class="fa-brands fa-google"></i> Avaliação do Google</div>
                     <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p class="testimonial-text">"Geleia artesanal de verdade, nota-se o capricho em cada detalhe. A fatia tem o tamanho ideal para o lanche da tarde. Super recomendo!"</p>
+                    <p class="testimonial-text">"Simplesmente maravilhoso! Comprei para minhas festas de final de ano. Todos adoraram! Indico e vou comprar novamente!"</p>
                     <div class="author-info">
-                        <div class="author-avatar">J</div>
+                        <div class="author-avatar">V</div>
                         <div>
-                            <div class="author-name">Juliana Mendes</div>
+                            <div class="author-name">Victoria Correia</div>
                             <div class="author-meta">Cliente Frequente</div>
                         </div>
                     </div>
@@ -950,7 +963,8 @@
     <footer>
         <div class="container">
             <div class="logo" style="justify-content: center; color: white; margin-bottom: 12px;">
-                <div class="logo-icon" style="background-color: var(--primary); color: white;"><i class="fa-solid fa-cheese"></i></div>
+                <!--<div class="logo-icon" style="background-color: var(--primary); color: white;"><i class="fa-solid fa-cheese"></i></div>-->
+				<div class="logo-icon"><img src="imagens/logo-margin.PNG" /></i></div>
                 <div class="logo-text" style="color: white;">Cheesecake da Sá</div>
             </div>
             <p>Os melhores cheesecakes artesanais de Joinville e região com geleia caseira de morango.</p>
